@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="680.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uacm.pf.farmaplus.ReportesController">
+   <children>
+      <Label layoutX="20.0" layoutY="20.0" text="Reportes del Negocio">
+         <font>
+            <Font name="SansSerif Bold" size="24.0" />
+         </font>
+      </Label>
+
+      <AnchorPane layoutX="20.0" layoutY="70.0" prefHeight="120.0" prefWidth="300.0" style="-fx-background-color: linear-gradient(to bottom right, #449d6b, #327a51); -fx-background-radius: 10px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);">
+         <children>
+            <VBox alignment="CENTER" prefHeight="120.0" prefWidth="300.0">
+               <children>
+                  <Label text="Ventas del Dia" textFill="WHITE">
+                     <font>
+                        <Font name="SansSerif Regular" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label text="\$4,500.00" textFill="WHITE">
+                     <font>
+                        <Font name="SansSerif Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      
+      <AnchorPane layoutX="340.0" layoutY="70.0" prefHeight="120.0" prefWidth="300.0" style="-fx-background-color: linear-gradient(to bottom right, #633364, #4a244b); -fx-background-radius: 10px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);">
+         <children>
+            <VBox alignment="CENTER" prefHeight="120.0" prefWidth="300.0">
+               <children>
+                  <Label text="Clientes Fidelizados" textFill="WHITE">
+                     <font>
+                        <Font name="SansSerif Regular" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label text="42 Membresias" textFill="WHITE">
+                     <font>
+                        <Font name="SansSerif Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
