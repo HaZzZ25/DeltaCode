@@ -2,68 +2,103 @@
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:controller="com.uacm.pf.farmaplus.LoginController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="674.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane onMouseDragged="#ventanaArrastrada" onMousePressed="#ventanaPresionada" prefHeight="674.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uacm.pf.farmaplus.LoginController">
    <children>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+      
+      <AnchorPane layoutX="450.0" prefHeight="674.0" prefWidth="550.0" style="-fx-background-color: white;">
          <children>
-            <AnchorPane layoutX="2.0" prefHeight="674.0" prefWidth="450.0" styleClass="left-form" stylesheets="@css/login.css">
+            
+            <AnchorPane fx:id="panelRegistro" opacity="0.0" prefHeight="674.0" prefWidth="550.0" translateX="550.0">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="150.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
+                  <VBox alignment="CENTER" prefHeight="674.0" prefWidth="550.0" spacing="20.0">
+                     <children>
+                        <Label text="Crear Cuenta" textFill="#449d6b">
+                           <font><Font name="System Bold" size="28.0" /></font>
+                        </Label>
+                        
+                        <TextField maxWidth="250.0" prefHeight="40.0" promptText="Nombre completo" styleClass="textfield" stylesheets="@css/login.css" />
+                        <TextField fx:id="txtNuevoUsuario" maxWidth="250.0" prefHeight="40.0" promptText="Nuevo Usuario" styleClass="textfield" stylesheets="@css/login.css" />
+                        <PasswordField fx:id="txtNuevaPassword" maxWidth="250.0" prefHeight="40.0" promptText="Contrasena" styleClass="textfield" stylesheets="@css/login.css" />
+                        
+                        <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0" styleClass="login-btn" stylesheets="@css/login.css" text="REGISTRARSE">
+                           <font><Font name="System Bold" size="16.0" /></font>
+                        </Button>
+                        <Hyperlink onAction="#mostrarLogin" text="Ya tengo cuenta. Volver" textFill="#616161" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+
+            <AnchorPane fx:id="panelLogin" prefHeight="674.0" prefWidth="550.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="674.0" prefWidth="550.0" spacing="15.0">
+                     <children>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagenes/8059763.png" />
+                           </image>
+                        </ImageView>
+                        
+                        <Label text="Iniciar Sesion" textFill="#449d6b">
+                           <font><Font name="System Bold" size="28.0" /></font>
+                        </Label>
+                        
+                        <TextField fx:id="txtUsuario" maxWidth="250.0" prefHeight="40.0" promptText="Usuario" styleClass="textfield" stylesheets="@css/login.css" />
+                        <PasswordField fx:id="txtPassword" maxWidth="250.0" prefHeight="40.0" promptText="Contraseña" styleClass="textfield" stylesheets="@css/login.css" />
+                        
+                        <Button mnemonicParsing="false" onAction="#iniciarSesion" prefHeight="45.0" prefWidth="250.0" styleClass="login-btn" stylesheets="@css/login.css" text="INGRESAR">
+                           <font><Font name="System Bold" size="16.0" /></font>
+                        </Button>
+                        
+                        <Hyperlink text="Olvide mi contraseña" textFill="#616161" />
+                        <Hyperlink onAction="#mostrarRegistro" text="Registrarme" textFill="#449d6b">
+                           <font><Font name="System Bold" size="14.0" /></font>
+                        </Hyperlink>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+
+            <Button layoutX="494.0" mnemonicParsing="false" onAction="#cerrarAplicacion" prefHeight="30.0" prefWidth="56.0" styleClass="close" stylesheets="@css/login.css" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+               <graphic><FontAwesomeIcon glyphName="CLOSE" size="1.2em" /></graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+
+      <AnchorPane prefHeight="674.0" prefWidth="450.0" styleClass="left-form" stylesheets="@css/login.css">
+         <children>
+            <VBox alignment="CENTER" prefHeight="674.0" prefWidth="450.0" spacing="20.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@imagenes/f8863741dba8034b3e1d4809a01c782a-estetoscopio-icono-medico-iconos.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="125.0" layoutY="337.0" text="Sistema de Farmacia ">
+                  
+                  <Label text="Sistema de Farmacia" textFill="WHITE">
                      <font>
-                        <Font name="SansSerif Bold" size="20.0" />
+                        <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="176.0" layoutY="366.0" text="FarmaPlus">
+                  <Label text="FarmaPlus" textFill="WHITE">
                      <font>
-                        <Font name="SansSerif Bold" size="20.0" />
+                        <Font name="System Bold" size="28.0" />
                      </font>
                   </Label>
                </children>
-            </AnchorPane>
-            <AnchorPane layoutX="458.0" prefHeight="674.0" prefWidth="550.0" styleClass="right-form" stylesheets="@css/login.css">
-               <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="175.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@imagenes/8059763.png" />
-                     </image>
-                  </ImageView>
-                  <Label layoutX="143.0" layoutY="198.0" text="Bienvenido Admin">
-                     <font>
-                        <Font name="SansSerif Bold" size="25.0" />
-                     </font>
-                  </Label>
-                  
-                  <TextField fx:id="txtUsuario" layoutX="147.0" layoutY="301.0" prefHeight="36.0" prefWidth="215.0" promptText="Usuario" styleClass="textfield" stylesheets="@css/login.css" />
-                  
-                  <PasswordField fx:id="txtPassword" layoutX="147.0" layoutY="364.0" prefHeight="36.0" prefWidth="215.0" promptText="Contraseña" styleClass="textfield" stylesheets="@css/login.css" />
-                  
-                  <Button layoutX="147.0" layoutY="447.0" mnemonicParsing="false" onAction="#iniciarSesion" prefHeight="36.0" prefWidth="215.0" styleClass="login-btn" stylesheets="@css/login.css" text="Ingresar">
-                     <font>
-                        <Font name="SansSerif Bold" size="20.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="494.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="56.0" styleClass="close" stylesheets="@css/login.css" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
-                     <graphic>
-                        <FontAwesomeIcon glyphName="CLOSE" size="1.2em" />
-                     </graphic>
-                  </Button>
-               </children>
-            </AnchorPane>
+            </VBox>
          </children>
       </AnchorPane>
+
    </children>
-</StackPane>
+</AnchorPane>
