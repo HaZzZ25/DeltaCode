@@ -123,7 +123,7 @@ public class ProductosController {
     @FXML
     private void limpiarCampos(ActionEvent event) {
         txtId.clear();
-        txtNombre.clear();
+        txtNombre.clear();//
         txtMarca.clear();
         txtPrecio.clear();
         txtStock.clear();
