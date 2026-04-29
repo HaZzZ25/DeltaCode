@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uacm.pf.farmaplus.controlador.DashboardController">
+   
+    <left>
+        <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="220.0" style="-fx-background-color: linear-gradient(to bottom right, #449d6b, #633364);" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="FarmaPlus" textFill="WHITE">
+                    <font>
+                        <Font name="SansSerif Bold" size="26.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="40.0" top="40.0" />
+                    </VBox.margin>
+                </Label>
+            
+                <Button mnemonicParsing="false" onAction="#abrirVentas" prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-cursor: hand;" text="Ventas">
+                    <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                    </font>
+                </Button>
+            
+                <Button fx:id="btnProductos" mnemonicParsing="false" onAction="#abrirProductos" prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-cursor: hand;" text="Productos">
+                    <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                    </font>
+                </Button>
+            
+                <Button mnemonicParsing="false" onAction="#abrirClientes" prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-cursor: hand;" text="Clientes / Membresias">
+                    <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                    </font>
+                </Button>
+            
+                <Button fx:id="btnReportes" mnemonicParsing="false" onAction="#abrirReportes" prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-cursor: hand;" text="Reportes">
+                    <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                    </font>
+                </Button>
+            
+                <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
+            
+                <Button mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: white; -fx-cursor: hand;" text="Cerrar Sesion">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="30.0" />
+                    </VBox.margin>
+                </Button>
+            </children>
+        </VBox>
+    </left>
+   
+    <center>
+        <StackPane fx:id="contentArea" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <Label text="Bienvenido a FarmaPlus!">
+                            <font>
+                                <Font name="SansSerif Bold" size="32.0" />
+                            </font>
+                        </Label>
+                        <Label text="Selecciona un modulo en el menu lateral para comenzar." textFill="#616161">
+                            <font>
+                                <Font name="SansSerif Regular" size="18.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                        </Label>
+                    </children>
+                </VBox>
+            </children>
+        </StackPane>
+    </center>
+</BorderPane>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane onMouseDragged="#ventanaArrastrada" onMousePressed="#ventanaPresionada" prefHeight="674.0" prefWidth="1000.0" style="-fx-background-color: transparent;" stylesheets="@../css/login.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uacm.pf.farmaplus.controlador.LoginController">
+
+   <children>
+
+      <!-- PANEL DERECHO -->
+      <AnchorPane layoutX="450.0" prefHeight="674.0" prefWidth="550.0" style="-fx-background-color: white;">
+         <children>
+
+            <!-- REGISTRO -->
+            <AnchorPane fx:id="panelRegistro" opacity="0.0" prefHeight="674.0" prefWidth="550.0" translateX="550.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="674.0" prefWidth="550.0" spacing="20.0">
+                     <children>
+                        <Label text="Crear Cuenta" textFill="#449d6b">
+                           <font><Font name="System Bold" size="28.0" /></font>
+                        </Label>
+
+                        <TextField fx:id="txtNuevoNombre" maxWidth="250.0" onAction="#registrarUsuario" prefHeight="40.0" promptText="Nombre completo" styleClass="textfield" />
+                        <TextField fx:id="txtNuevoUsuario" maxWidth="250.0" onAction="#registrarUsuario" prefHeight="40.0" promptText="Nuevo Usuario" styleClass="textfield" />
+                        <PasswordField fx:id="txtNuevaPassword" maxWidth="250.0" onAction="#registrarUsuario" prefHeight="40.0" promptText="Contraseña" styleClass="textfield" />
+
+                        <Button defaultButton="true" onAction="#registrarUsuario" prefHeight="45.0" prefWidth="250.0" styleClass="login-btn" text="REGISTRARSE">
+                           <font><Font name="System Bold" size="16.0" /></font>
+                        </Button>
+
+                        <Hyperlink onAction="#mostrarLogin" text="Ya tengo cuenta. Volver" textFill="#616161" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+
+            <!-- LOGIN -->
+            <AnchorPane fx:id="panelLogin" prefHeight="674.0" prefWidth="550.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="674.0" prefWidth="550.0" spacing="15.0">
+
+                     <children>
+
+                        <ImageView fitHeight="100.0" fitWidth="100.0" preserveRatio="true">
+                           <image>
+                               <Image url="@../img/8059763.png" />
+                               <!--<Image url="@/imag/8059763.png"/>-->
+                           </image>
+                        </ImageView>
+
+                        <Label text="Iniciar Sesion" textFill="#449d6b">
+                           <font><Font name="System Bold" size="28.0" /></font>
+                        </Label>
+
+                        <TextField fx:id="txtUsuario" maxWidth="250.0" onAction="#iniciarSesion" prefHeight="40.0" promptText="Usuario" styleClass="textfield" />
+                        <PasswordField fx:id="txtPassword" maxWidth="250.0" onAction="#iniciarSesion" prefHeight="40.0" promptText="Contraseña" styleClass="textfield" />
+
+                        <Button defaultButton="true" onAction="#iniciarSesion" prefHeight="45.0" prefWidth="250.0" styleClass="login-btn" text="INGRESAR">
+                           <font><Font name="System Bold" size="16.0" /></font>
+                        </Button>
+
+                        <Hyperlink text="Olvide mi contraseña" textFill="#616161" />
+                        <Hyperlink onAction="#mostrarRegistro" text="Registrarme" textFill="#449d6b">
+                           <font><Font name="System Bold" size="14.0" /></font>
+                        </Hyperlink>
+
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+
+            <!-- BOTÓN CERRAR -->
+            <Button onAction="#cerrarAplicacion" prefHeight="30.0" prefWidth="56.0" styleClass="close" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+
+               <graphic>
+                  <FontAwesomeIcon glyphName="CLOSE" size="1.2em" />
+               </graphic>
+
+            </Button>
+
+         </children>
+      </AnchorPane>
+
+      <!-- PANEL IZQUIERDO -->
+      <AnchorPane prefHeight="674.0" prefWidth="450.0" styleClass="left-form">
+         <children>
+
+            <VBox alignment="CENTER" prefHeight="674.0" prefWidth="450.0" spacing="20.0">
+
+               <children>
+
+                  <ImageView fitHeight="150.0" fitWidth="150.0" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/f8863741dba8034b3e1d4809a01c782a-estetoscopio-icono-medico-iconos.png" />
+                        <!--<Image url="@/img/f8863741dba8034b3e1d4809a01c782a-estetoscopio-icono-medico-iconos.png"/>-->
+                     </image>
+                  </ImageView>
+
+                  <Label text="Sistema de Farmacia" textFill="WHITE">
+                     <font><Font name="System Bold" size="24.0" /></font>
+                  </Label>
+
+                  <Label text="FarmaPlus" textFill="WHITE">
+                     <font><Font name="System Bold" size="28.0" /></font>
+                  </Label>
+
+               </children>
+            </VBox>
+
+         </children>
+      </AnchorPane>
+
+   </children>
+</AnchorPane>
